@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Himadri Shekhar Ganguly - Accounting & Finance Professional. MBA from University of Dhaka.">
+    <meta name="description" content="Himadri Shekhar Ganguly - Accounting & Finance Professional specializing in Fiscal Control and Automated Financial Reporting.">
     <meta name="author" content="Himadri Shekhar Ganguly">
     <title>Himadri Shekhar Ganguly | Finance & Accounting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,20 +14,144 @@
         :root { --text: #1f2937; --text-light: #6b7280; --accent: #2563eb; --accent-hover: #1d4ed8; --border: #e5e7eb; --bg: #ffffff; }
         body { font-family: 'Source Sans 3', sans-serif; line-height: 1.6; color: var(--text); background-color: var(--bg); -webkit-font-smoothing: antialiased; }
         .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
-        header { margin-bottom: 40px; }
-        h1 { font-family: 'Merriweather', serif; font-size: 2.5rem; margin-bottom: 8px; color: #111; letter-spacing: -0.02em; }
-        .subtitle { font-size: 1.15rem; color: var(--text-light); margin-bottom: 15px; font-weight: 500; }
-        .nav-links { display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; }
-        .nav-links a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.95rem; border-bottom: 1px solid transparent; transition: border 0.2s; }
-        .nav-links a:hover { border-bottom: 1px solid var(--accent); }
-        h2 { font-family: 'Merriweather', serif; font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 45px 0 20px 0; color: #111; }
-        .news-item { margin-bottom: 12px; display: grid; grid-template-columns: 110px 1fr; gap: 10px; }
-        .news-date { font-weight: 700; color: var(--text-light); font-size: 0.9rem; }
-        .exp-item { margin-bottom: 25px; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
-        .exp-title { font-weight: 600; font-size: 1.05rem; }
-        .exp-date { color: var(--text-light); font-size: 0.9rem; font-weight: 500; }
-        .exp-org { color: var(--text-light); font-style: italic; margin-bottom: 8px; font-size: 0.95rem; }
-        ul { padding-left: 20px; margin-bottom: 15px; }
-        li { margin-bottom: 6px; }
-        .show-more-btn { background: none; border: none; color: var(--accent); font-family: inherit; font-size: 0.95rem; font-weight:
+        
+        nav { margin-bottom: 60px; display: flex; gap: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        nav a:hover { color: var(--accent); }
+
+        .profile-section { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-bottom: 60px; align-items: start; }
+        @media (max-width: 600px) { .profile-section { grid-template-columns: 1fr; } }
+
+        .profile-info h1 { font-family: 'Merriweather', serif; font-size: 2.2rem; margin-bottom: 8px; color: #111; line-height: 1.2; }
+        .profile-title { font-size: 1.1rem; color: var(--text-light); margin-bottom: 20px; font-weight: 500; }
+        
+        .social-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+        .social-links a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+        .about-text p { margin-bottom: 15px; font-size: 1.05rem; }
+        
+        h2 { font-family: 'Merriweather', serif; font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 45px 0 25px 0; color: #111; }
+        
+        .news-item { margin-bottom: 15px; display: grid; grid-template-columns: 100px 1fr; gap: 15px; }
+        .news-date { font-weight: 700; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .project-item { margin-bottom: 30px; }
+        .project-header { display: flex; justify-content: space-between; font-weight: 600; font-size: 1.1rem; margin-bottom: 4px; }
+        .project-org { font-style: italic; color: var(--text-light); margin-bottom: 10px; display: block; }
+        
+        .ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .ref-card { border: 1px solid var(--border); padding: 20px; border-radius: 4px; }
+        
+        .btn-toggle { background: none; border: none; color: var(--accent); font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; padding: 0; margin-top: 10px; }
+        .hidden-content { display: none; margin-top: 15px; }
+        .hidden-content.show { display: block; }
+
+        footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.85rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section class="profile-section" id="about">
+            <div class="profile-sidebar">
+                <h1>Himadri Shekhar Ganguly</h1>
+                <p class="profile-title">Accounts Officer<br>MBA, University of Dhaka</p>
+                <ul class="social-links">
+                    <li><a href="mailto:hsg.career98@gmail.com">Email</a></li>
+                    <li><a href="https://linkedin.com/in/hsganguly" target="_blank">LinkedIn</a></li>
+                    <li><a href="#">Curriculum Vitae</a></li>
+                </ul>
+            </div>
+            <div class="about-text">
+                <p>I am an Accounting and Finance professional focused on fiscal control and automated financial reporting. I specialize in compliance optimization by automating Tax/VAT filings and engineering AR aging trackers to minimize audit risks and regulatory fines.</p>
+                <p>My expertise lies at the intersection of traditional management accounting and modern data automation—always asking how we can achieve higher precision with less manual effort. I hold MBA and BBA degrees in Accounting from the University of Dhaka.</p>
+                <p><strong>Currently seeking:</strong> Management Trainee or Financial Analyst roles in the financial services sector.</p>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>Recent News</h2>
+            <div class="news-item"><div class="news-date">Jan 2026</div><div>Transitioned to explore new professional growth opportunities in financial operations.</div></div>
+            <div class="news-item"><div class="news-date">Sep 2025</div><div>Joined CNPC Chuanqing Drilling Engineering Company Limited as Accounts Officer.</div></div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="project-item">
+                <div class="project-header"><span>Accounts Officer</span><span>2025 – 2026</span></div>
+                <span class="project-org">CNPC Chuanqing Drilling Engineering Company Limited</span>
+                <ul>
+                    <li>Raised annual profit margins by 2% via monthly variance analysis to identify 5% in cost leakage.</li>
+                    <li>Reduced billing errors by 15% via TDS & VAT mismatch correction, cutting reprocessing lags by 20%.</li>
+                    <li>Cut collection time by 15 days using AR aging logic, improving turnover by 25%.</li>
+                </ul>
+                <button class="btn-toggle" onclick="toggle('extra-exp')">Show More Achievements →</button>
+                <div id="extra-exp" class="hidden-content">
+                    <ul>
+                        <li>Reclaimed 15 hours/week via conditional logic automation, cutting process turnaround by 22%.</li>
+                        <li>Ensured zero discrepancy during reviews through VBA indexing to prevent compliance fines.</li>
+                        <li>Refined data quality by 40% via automated cleaning logic, improving report generation speed.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="project-item">
+                <div class="project-header"><span>MBA in Accounting and Information Systems</span><span>2025</span></div>
+                <span class="project-org">University of Dhaka | GPA: 3.67/4.00</span>
+            </div>
+            <div class="project-item">
+                <div class="project-header"><span>BBA in Accounting and Information Systems</span><span>2023</span></div>
+                <span class="project-org">University of Dhaka | GPA: 3.32/4.00</span>
+            </div>
+            <div class="project-item">
+                <div class="project-header"><span>CMA (Business Level)</span><span>In Progress</span></div>
+                <span class="project-org">ICMAB | Cleared: 450/2000</span>
+            </div>
+        </section>
+
+        <section id="references">
+            <h2>References</h2>
+            <div class="ref-grid">
+                <div class="ref-card">
+                    <strong>Md. Saiful Alam FCMA, PhD</strong><br>
+                    Professor, University of Dhaka<br>
+                    <a href="mailto:s.alam@du.ac.bd" style="color:var(--accent); text-decoration:none; font-size:0.9rem;">s.alam@du.ac.bd</a>
+                </div>
+                <div class="ref-card">
+                    <strong>Md. Moniruzzaman FCA, PhD</strong><br>
+                    Professor, University of Dhaka<br>
+                    <a href="mailto:mmzaman.ais@du.ac.bd" style="color:var(--accent); text-decoration:none; font-size:0.9rem;">mmzaman.ais@du.ac.bd</a>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <p>Himadri Shekhar Ganguly &copy; 2026 | Last updated: March 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggle(id) {
+            const content = document.getElementById(id);
+            const btn = event.target;
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                btn.textContent = 'Show More Achievements →';
+            } else {
+                content.classList.add('show');
+                btn.textContent = '← Show Less';
+            }
+        }
+    </script>
+</body>
+</html>
