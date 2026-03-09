@@ -3,128 +3,884 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Himadri Shekhar Ganguly - Accounting & Finance Professional specializing in Fiscal Control and Automated Financial Reporting.">
-    <title>Himadri Shekhar Ganguly | Finance & Accounting</title>
+    <meta name="description" content="Himadri Shekhar Ganguly - Accounting & Finance Professional specializing in cost management, variance analysis, and automated financial reporting.">
+    <meta name="keywords" content="Himadri Shekhar Ganguly, Cost Accounting, Finance, Variance Analysis, MIS Reporting, ICMAB, University of Dhaka">
+    <meta name="author" content="Himadri Shekhar Ganguly">
+    <title>Himadri Shekhar Ganguly | Accounting & Finance Professional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --text: #1f2937; --text-light: #6b7280; --accent: #2563eb; --accent-hover: #1d4ed8; --border: #e5e7eb; --bg: #ffffff; }
-        body { font-family: 'Source Sans 3', sans-serif; line-height: 1.6; color: var(--text); background-color: var(--bg); -webkit-font-smoothing: antialiased; }
-        .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
-        nav { margin-bottom: 60px; display: flex; gap: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
-        nav a { color: var(--text); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-        nav a:hover { color: var(--accent); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* The Sidebar Structure */
-        main { display: grid; grid-template-columns: 240px 1fr; gap: 40px; }
-        @media (max-width: 768px) { main { grid-template-columns: 1fr; } }
+        :root {
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e5e7eb;
+            --bg: #ffffff;
+            --highlight: #eff6ff;
+            --focus-ring: #3b82f6;
+        }
 
-        .sidebar h1 { font-family: 'Merriweather', serif; font-size: 2.2rem; margin-bottom: 8px; color: #111; line-height: 1.2; }
-        .sidebar-title { font-size: 1rem; color: var(--text-light); margin-bottom: 20px; font-weight: 500; }
-        .social-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-        .social-links a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
 
-        /* Content Structure */
-        h2 { font-family: 'Merriweather', serif; font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 0 0 25px 0; color: #111; }
-        h2:not(:first-child) { margin-top: 45px; }
-        .about-text p { margin-bottom: 15px; font-size: 1.05rem; }
-        .news-item { margin-bottom: 15px; display: grid; grid-template-columns: 100px 1fr; gap: 15px; }
-        .news-date { font-weight: 700; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; }
-        .item-card { margin-bottom: 30px; }
-        .item-header { display: flex; justify-content: space-between; font-weight: 600; font-size: 1.1rem; margin-bottom: 4px; }
-        .item-org { font-style: italic; color: var(--text-light); margin-bottom: 10px; display: block; }
-        ul { padding-left: 20px; margin-bottom: 10px; }
-        li { margin-bottom: 6px; }
-        .btn-toggle { background: none; border: none; color: var(--accent); font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; padding: 0; margin-top: 10px; }
-        .hidden-content { display: none; margin-top: 15px; }
-        .hidden-content.show { display: block; }
-        footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-light); font-size: 0.85rem; }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        @media (prefers-contrast: high) {
+            :root {
+                --text: #000000;
+                --text-light: #333333;
+                --accent: #0000ee;
+                --border: #000000;
+            }
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 2000;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skip-link:focus {
+            top: 20px;
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 3px;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 80px 60px 100px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+            font-weight: 500;
+            padding: 4px 8px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 36px;
+            align-items: start;
+        }
+
+        .profile-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+        }
+
+        h1 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 4px;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h2 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 22px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .internship-notice {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 18px 20px;
+            border-radius: 6px;
+            margin-top: 24px;
+            margin-bottom: 28px;
+        }
+
+        .internship-notice p {
+            margin: 0;
+            color: #92400e;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .theme-intro {
+            background: var(--highlight);
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 36px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .theme-intro p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text);
+        }
+
+        .research-question {
+            background: var(--highlight);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 28px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .research-question h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .research-question p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .project {
+            margin-bottom: 42px;
+            padding-bottom: 42px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project-header {
+            margin-bottom: 10px;
+        }
+
+        .project-meta {
+            color: var(--text-light);
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .project-links {
+            margin-top: 14px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px;
+        }
+
+        .related-papers {
+            margin-top: 18px;
+            padding: 16px;
+            background: #f9fafb;
+            border-radius: 6px;
+        }
+
+        .related-papers h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .related-papers ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .related-papers li {
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .related-papers li::before {
+            content: '📄';
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+
+        .preprint-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 2px 7px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 6px;
+            text-transform: uppercase;
+        }
+
+        .show-more {
+            display: inline-block;
+            padding: 11px 22px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 14px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .show-more:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 28px;
+        }
+
+        .hidden-content.show {
+            display: block;
+        }
+
+        .publications-category {
+            margin-bottom: 42px;
+        }
+
+        .publications-category h3 {
+            font-size: 19px;
+            margin-bottom: 18px;
+            color: var(--accent);
+        }
+
+        .publication {
+            margin-bottom: 22px;
+            padding: 18px;
+            background: var(--highlight);
+            border-radius: 6px;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            font-size: 15px;
+        }
+
+        .pub-authors {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .pub-venue {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .pub-link {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            padding: 4px;
+        }
+
+        .timeline {
+            margin-top: 28px;
+            max-height: 550px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .timeline::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .timeline::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 4px;
+        }
+
+        .timeline::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+
+        .timeline::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+
+        .timeline-item {
+            margin-bottom: 28px;
+            padding-left: 22px;
+            border-left: 2px solid var(--border);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .awards-grid {
+            display: grid;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .award-item {
+            padding: 18px;
+            background: var(--highlight);
+            border-radius: 6px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .award-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .award-org {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .award-year {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 70px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        @media print {
+            nav { display: none; }
+            .skip-link { display: none; }
+            .show-more { display: none; }
+            .hidden-content { display: block !important; }
+            body { font-size: 12pt; line-height: 1.5; }
+            a { color: #000; text-decoration: underline; }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                padding: 60px 40px 80px;
+            }
+
+            .nav-content {
+                padding: 16px 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 24px 70px;
+            }
+
+            .nav-content {
+                padding: 14px 24px;
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .profile-photo {
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="#about">About</a>
-            <a href="#news">News</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-        <main>
-            <section class="sidebar">
-                <h1>Himadri Shekhar Ganguly</h1>
-                <p class="sidebar-title">Accounts Officer<br>University of Dhaka</p>
-                <ul class="social-links">
-                    <li><a href="mailto:hsg.career98@gmail.com">Email</a></li>
-                    <li><a href="https://linkedin.com/in/hsganguly" target="_blank">LinkedIn</a></li>
-                    <li><a href="#">Curriculum Vitae</a></li>
-                </ul>
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-content">
+            <a href="#top" class="nav-name" aria-label="Back to top">Himadri Shekhar Ganguly</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#news">News</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header id="about">
+            <div class="header-content">
+                <img src="profile.jpg" alt="Portrait photo of Himadri Shekhar Ganguly" class="profile-photo">
+                <div>
+                    <h1>Himadri Shekhar Ganguly</h1>
+                    <p class="subtitle">Accounting & Finance Professional<br>Dhaka, Bangladesh</p>
+                    <div class="contact-links">
+                        <a href="mailto:hsg.career98@gmail.com" aria-label="Send email to Himadri Shekhar Ganguly">Email</a>
+                        <a href="https://www.linkedin.com/in/himadri-shekhar-ganguly" target="_blank" rel="noopener noreferrer" aria-label="View LinkedIn profile (opens in new tab)">LinkedIn</a>
+                        <a href="CV_Himadri_Shekhar_Ganguly_Danish.pdf" aria-label="Download CV as PDF">CV</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main id="main">
+            <section>
+                <p>I'm an Accounting and Finance professional with a strong foundation in cost management, variance analysis, and automated financial reporting. My work focuses on turning raw financial data into actionable insights that protect margins and accelerate decision-making.</p>
+
+                <p>I hold an MBA in Accounting and Information Systems from the University of Dhaka (GPA: 3.67/4.00) and am currently pursuing the ICMAB Cost and Management Accounting qualification. My most recent role as Accounts Officer at CNPC Chuanqing Drilling Engineering Company Limited gave me hands-on experience building compliance frameworks, AR aging tools, and Excel-based automation that eliminated hours of manual work each week.</p>
+
+                <p>I transitioned in January 2026 to expand my scope and am now seeking long-term professional growth opportunities where I can apply my skills in fiscal control, MIS reporting, and process automation.</p>
+
+                <div class="internship-notice" role="note" aria-label="Job availability">
+                    <p>🔍 Currently seeking full-time opportunities in Accounting, Finance, or Cost Management</p>
+                </div>
             </section>
 
-            <section class="content">
-                <div id="about" class="about-text">
-                    <h2>About</h2>
-                    <p>I am an Accounting and Finance professional focused on fiscal control and automated financial reporting. I specialize in compliance optimization by automating Tax/VAT filings and engineering AR aging trackers to minimize audit risks.</p>
-                    <p>My expertise lies in variance analysis and data automation—leveraging Excel and VBA to transform complex data into actionable insights.</p>
+            <section id="news">
+                <h2>Recent Updates</h2>
+
+                <div class="timeline" role="feed" aria-label="Recent updates" tabindex="0">
+                    <article class="timeline-item">
+                        <div class="timeline-date">Jan 2026</div>
+                        <div class="timeline-content">
+                            <h4>Transitioned from CNPC Chuanqing</h4>
+                            <p>Left role as Accounts Officer to pursue broader professional opportunities and long-term growth</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">Jul 2025</div>
+                        <div class="timeline-content">
+                            <h4>Completed MBA — University of Dhaka</h4>
+                            <p>Graduated with MBA in Accounting and Information Systems | Cumulative GPA: 3.67/4.00</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">Sep 2025</div>
+                        <div class="timeline-content">
+                            <h4>Joined CNPC Chuanqing Drilling Engineering</h4>
+                            <p>Started as Accounts Officer, taking on cost analysis, compliance automation, and MIS reporting responsibilities</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">In Progress</div>
+                        <div class="timeline-content">
+                            <h4>ICMAB — Cost and Management Accounting</h4>
+                            <p>Pursuing Business Level qualification | Cleared: 450/2000</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="timeline-date">Dec 2023</div>
+                        <div class="timeline-content">
+                            <h4>Completed BBA — University of Dhaka</h4>
+                            <p>Graduated with BBA in Accounting and Information Systems | Cumulative GPA: 3.32/4.00</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+
+                <div class="theme-intro">
+                    <p><strong>Core approach:</strong> Financial data should drive decisions, not just reports. My work consistently focuses on automating workflows, resolving compliance gaps, and surfacing the cost insights that actually move the needle on margins and efficiency.</p>
                 </div>
 
-                <div id="news">
-                    <h2>Recent News</h2>
-                    <div class="news-item"><div class="news-date">Jan 2026</div><div>Transitioned to explore new professional growth opportunities in financial operations.</div></div>
-                    <div class="news-item"><div class="news-date">Sep 2025</div><div>Joined CNPC Chuanqing Drilling Engineering Company Limited as Accounts Officer.</div></div>
+                <div class="research-question">
+                    <h3>Want tighter cost control and higher margins?</h3>
+                    <p>Variance analysis and unit costing reveal where money leaks. Catching 5% cost leakage early can translate directly into measurable profit gains.</p>
                 </div>
 
-                <div id="experience">
-                    <h2>Experience</h2>
-                    <div class="item-card">
-                        <div class="item-header"><span>Accounts Officer</span><span>2025 – 2026</span></div>
-                        <span class="item-org">CNPC Chuanqing Drilling Engineering Company Limited</span>
+                <article class="project">
+                    <div class="project-header">
+                        <h3>Cost & Margin Analysis</h3>
+                    </div>
+                    <p class="project-meta">CNPC Chuanqing Drilling Engineering Company Limited | Sep 2025 – Jan 2026</p>
+
+                    <p>Conducted monthly variance analysis to identify cost leakage and maintain gross margins. By building cost-allocation models, I improved pricing accuracy and made service-level profitability visible to management for the first time.</p>
+
+                    <p>The work raised annual profit margins by 2% and reduced operational consumption cost by systematically tracking yield and wastage patterns across service lines.</p>
+
+                    <div class="related-papers">
+                        <h4>Key Outcomes:</h4>
                         <ul>
-                            <li>Raised annual profit margins by 2% via monthly variance analysis.</li>
-                            <li>Reduced billing errors by 15% via TDS & VAT mismatch correction.</li>
+                            <li>Identified 5% in cost leakage through variance analysis, increasing annual profit margins by 2%</li>
+                            <li>Improved pricing accuracy through cost-allocation models to determine specific service profitability</li>
+                            <li>Reduced operational consumption cost by tracking yield and wastage patterns</li>
                         </ul>
-                        <button class="btn-toggle" onclick="toggle('more-exp')">Show More Achievements →</button>
-                        <div id="extra-exp" class="hidden-content" id="more-exp">
-                            <ul>
-                                <li>Cut collection time by 15 days using AR aging logic.</li>
-                                <li>Ensured zero discrepancy during reviews through VBA indexing.</li>
-                            </ul>
+                    </div>
+                </article>
+
+                <div class="research-question">
+                    <h3>Want faster, more reliable compliance and reporting?</h3>
+                    <p>TDS/VAT mismatches and manual processes create audit risk and slow teams down. Automation and clean data pipelines solve both problems at once.</p>
+                </div>
+
+                <article class="project">
+                    <div class="project-header">
+                        <h3>Compliance Automation & MIS Reporting</h3>
+                    </div>
+                    <p class="project-meta">CNPC Chuanqing Drilling Engineering Company Limited | Sep 2025 – Jan 2026</p>
+
+                    <p>Built VBA-based indexing systems that ensured zero discrepancies during regulatory reviews, preventing potential compliance fines. Reduced billing errors by 15% through systematic TDS and VAT mismatch correction, cutting downstream reprocessing lags by 20%.</p>
+
+                    <p>Automated data cleaning logic refined data quality by 40% and improved report generation speed by a full day. Delivered weekly management insights two days ahead of schedule, accelerating decisions by 30%.</p>
+
+                    <div class="related-papers">
+                        <h4>Key Outcomes:</h4>
+                        <ul>
+                            <li>Reduced billing errors by 15% via TDS & VAT mismatch correction, cutting reprocessing lags by 20%</li>
+                            <li>Prevented compliance fines via VBA indexing, ensuring zero discrepancies during regulatory reviews</li>
+                            <li>Refined data quality by 40% via automated cleaning logic, improving report generation by 1 full day</li>
+                            <li>Delivered weekly insights 2 days early through Pivot table summaries, accelerating decisions by 30%</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <div class="research-question">
+                    <h3>Want faster collections and cleaner AR management?</h3>
+                    <p>AR aging analysis with SUMIFS and Pivots brings structure to receivables. Cutting collection time by 15 days has a direct impact on cash flow and working capital.</p>
+                </div>
+
+                <article class="project">
+                    <div class="project-header">
+                        <h3>AR Management & Process Efficiency</h3>
+                    </div>
+                    <p class="project-meta">CNPC Chuanqing Drilling Engineering Company Limited | Sep 2025 – Jan 2026</p>
+
+                    <p>Engineered AR aging logic using SUMIFS and Pivot tables that cut collection time by 15 days and improved receivables turnover by 25%. Saved 10+ hours in audit preparation through XLOOKUP matching, achieving high precision in MIS reports across three departments.</p>
+
+                    <p>Reclaimed 15 hours per week through conditional logic automation, cutting process turnaround by 22% and reducing search time to 2 minutes through index matching — raising overall office productivity by 27%.</p>
+
+                    <div class="related-papers">
+                        <h4>Key Outcomes:</h4>
+                        <ul>
+                            <li>Cut collection time by 15 days using AR aging logic, improving turnover by 25%</li>
+                            <li>Saved 10+ hours in audit-prep via XLOOKUP matching with high precision in MIS reports</li>
+                            <li>Reclaimed 15 hours/week via conditional logic automation, cutting process turnaround by 22%</li>
+                            <li>Reduced search time to 2 minutes by index matching, raising office productivity by 27%</li>
+                            <li>Cut reporting errors by 34% by standardizing entries across 3 departments</li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+
+                <div class="publications-category">
+                    <h3>Accounting & Finance</h3>
+
+                    <div class="publication">
+                        <div class="pub-title">Cost & Management Accounting</div>
+                        <div class="pub-authors">Unit costing · Margin analysis · Cost allocation · Variance analysis · Budgetary control · Cost optimization</div>
+                    </div>
+
+                    <div class="publication">
+                        <div class="pub-title">Financial Operations</div>
+                        <div class="pub-authors">Vouching · AR aging analysis · Ledger reconciliation · Audit trail analysis · TDS/VAT compliance · MIS reporting</div>
+                    </div>
+                </div>
+
+                <div class="publications-category">
+                    <h3>Technical & Tools</h3>
+
+                    <div class="publication">
+                        <div class="pub-title">Excel & Automation</div>
+                        <div class="pub-authors">Advanced Excel (XLOOKUP, SUMIFS, VLOOKUP, Pivot Tables) · VBA automation · Conditional logic workflows · Data normalization · Repository & archive indexing</div>
+                    </div>
+
+                    <div class="publication">
+                        <div class="pub-title">Systems & Analysis</div>
+                        <div class="pub-authors">ERP integration & implementation · MIS reporting · Agentic workflow · Business analysis · Process analysis · Multitasking</div>
+                    </div>
+                </div>
+
+                <section id="education" style="margin-top: 0;">
+                    <h2>Education</h2>
+
+                    <div class="awards-grid">
+                        <div class="award-item">
+                            <div class="award-title">MBA — Accounting and Information Systems</div>
+                            <div class="award-org">University of Dhaka | Cumulative GPA: 3.67/4.00</div>
+                            <div class="award-year">July 2025</div>
+                        </div>
+
+                        <div class="award-item">
+                            <div class="award-title">BBA — Accounting and Information Systems</div>
+                            <div class="award-org">University of Dhaka | Cumulative GPA: 3.32/4.00</div>
+                            <div class="award-year">December 2023</div>
+                        </div>
+
+                        <div class="award-item">
+                            <div class="award-title">Cost and Management Accounting — Business Level</div>
+                            <div class="award-org">The Institute of Cost and Management Accountants of Bangladesh (ICMAB) | Cleared: 450/2000</div>
+                            <div class="award-year">In Progress</div>
                         </div>
                     </div>
-                </div>
+                </section>
+            </section>
 
-                <div id="education">
-                    <h2>Education</h2>
-                    <div class="item-card">
-                        <div class="item-header"><span>MBA in Accounting & IS</span><span>2025</span></div>
-                        <span class="item-org">University of Dhaka | GPA: 3.67/4.00</span>
+            <section id="references">
+                <h2>References</h2>
+
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-title">Md. Saiful Alam FCMA, PhD</div>
+                        <div class="award-org">Professor of Accounting, University of Dhaka</div>
+                        <div class="award-year"><a href="mailto:s.alam@du.ac.bd">s.alam@du.ac.bd</a> · (+880) 171-1322378</div>
                     </div>
-                    <div class="item-card">
-                        <div class="item-header"><span>BBA in Accounting & IS</span><span>2023</span></div>
-                        <span class="item-org">University of Dhaka | GPA: 3.32/4.00</span>
+
+                    <div class="award-item">
+                        <div class="award-title">Md. Moniruzzaman FCA, ACMA, AFHEA, PhD</div>
+                        <div class="award-org">Professor of Accounting, University of Dhaka</div>
+                        <div class="award-year"><a href="mailto:mmzaman.ais@du.ac.bd">mmzaman.ais@du.ac.bd</a> · (+880) 171-6785231</div>
                     </div>
                 </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+
+                <p><strong>Email:</strong> <a href="mailto:hsg.career98@gmail.com">hsg.career98@gmail.com</a></p>
+                <p><strong>Phone:</strong> (+880) 130-1212832</p>
+                <p><strong>Location:</strong> Dhaka, Bangladesh</p>
+
+                <p style="margin-top: 22px;">I'm happy to discuss opportunities in accounting, finance, or cost management. Feel free to reach out via email or connect on LinkedIn.</p>
             </section>
         </main>
 
-        <footer>
+        <footer role="contentinfo">
             <p>Last updated: March 2026</p>
         </footer>
     </div>
 
     <script>
-        function toggle(id) {
-            const content = document.getElementById('extra-exp');
-            const btn = event.target;
+        function toggleResearch() {
+            const content = document.getElementById('more-research');
+            const button = event.target;
+
             if (content.classList.contains('show')) {
                 content.classList.remove('show');
-                btn.textContent = 'Show More Achievements →';
+                button.textContent = 'Show More →';
+                button.setAttribute('aria-expanded', 'false');
             } else {
                 content.classList.add('show');
-                btn.textContent = '← Show Less';
+                button.textContent = '← Show Less';
+                button.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function togglePublications() {
+            const content = document.getElementById('all-publications');
+            const button = event.target;
+
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                button.textContent = 'Show All →';
+                button.setAttribute('aria-expanded', 'false');
+            } else {
+                content.classList.add('show');
+                button.textContent = '← Show Less';
+                button.setAttribute('aria-expanded', 'true');
             }
         }
     </script>
